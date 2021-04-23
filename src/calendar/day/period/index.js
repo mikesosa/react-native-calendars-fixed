@@ -22,7 +22,6 @@ export default class PeriodDay extends Component {
 
   constructor(props) {
     super(props);
-
     this.theme = {...defaultStyle, ...(props.theme || {})};
     this.style = styleConstructor(props.theme);
     
@@ -111,7 +110,7 @@ export default class PeriodDay extends Component {
 
   render() {
     const {state, marking} = this.props;
-    const containerStyle = [this.style.base];
+    const containerStyle = [{ ...this.style.base, height: this.props.dayHeight }];
     const textStyle = [this.style.text];
     let leftFillerStyle = {};
     let rightFillerStyle = {};
@@ -182,9 +181,9 @@ export default class PeriodDay extends Component {
       }
 
       fillers = (
-        <View style={[this.style.fillers, fillerStyle]}>
-          <View style={[this.style.leftFiller, leftFillerStyle]}/>
-          <View style={[this.style.rightFiller, rightFillerStyle]}/>
+        <View style={[this.style.fillers, fillerStyle, { height: this.props.dayHeight }]}>
+          <View style={[this.style.leftFiller, leftFillerStyle, { height: this.props.dayHeight }]}/>
+          <View style={[this.style.rightFiller, rightFillerStyle, { height: this.props.dayHeight }]}/>
         </View>
       );
     }

@@ -87,6 +87,7 @@ export default class Day extends Component {
     return (
       <Component
           {...dayProps}
+          dayHeight={this.props.dayHeight}
           date={date}
           testID={`${SELECT_DATE_SLOT}-${date.dateString}`}
           accessibilityLabel={this.getAccessibilityLabel(day)}

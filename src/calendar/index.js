@@ -220,6 +220,7 @@ class Calendar extends Component {
       <View style={this.style.dayContainer} key={id}>
         <Day
           {...dayProps}
+          dayHeight={this.props.dayHeight}
           day={day}
           state={this.getState(day)}
           marking={this.getDateMarking(day)}
@@ -261,6 +262,9 @@ class Calendar extends Component {
 
     return <View style={this.style.monthView}>{weeks}</View>;
   }
+
+
+  
 
   renderHeader() {
     const {customHeader, headerStyle, displayLoadingIndicator, markedDates, testID} = this.props;

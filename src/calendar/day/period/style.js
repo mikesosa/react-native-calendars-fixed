@@ -3,7 +3,7 @@ import * as defaultStyle from '../../../style';
 
 
 const STYLESHEET_ID = 'stylesheet.day.period';
-const FILLER_HEIGHT = 34;
+const FILLER_HEIGHT = 80;
 
 export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
@@ -16,7 +16,8 @@ export default function styleConstructor(theme={}) {
     base: {
       width: 38,
       height: FILLER_HEIGHT,
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'center'
     },
 
     fillers: {
